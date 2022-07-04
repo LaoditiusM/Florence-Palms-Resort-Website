@@ -1,0 +1,50 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #e4e4e448;
+}
+
+.wrapper {
+  background-color: #f9fff9;
+  border-radius: 20px;
+  width: 40vh;
+  padding: 20px;
+  border-top: 7px solid green;
+  box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+}
+
+.wrapper h2 {
+  color: green;
+}
+.details {
+  text-align: left;
+}
+
+.container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  width: 120px;
+}
+
+.btn {
+  width: 20px;
+  padding: 10px;
+  background-color: green;
+  position: relative;
+  top: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}

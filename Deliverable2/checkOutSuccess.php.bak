@@ -1,0 +1,38 @@
+<?php
+require_once "checkout.php";
+echo <<<_END
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment checkout form UI</title>
+    <link rel="stylesheet" href="checkoutSucc.css">
+</head>
+<body> 
+   <div class="container">
+     <img src="tick2.png" alt="">
+     <div class="wrapper">
+        <h2>PAYMENT SUCCESSFUL</h2>
+        <h3>Billing Address:</h3>
+        <div class="details"> 
+<table>
+<tr>
+ <td></tr>
+ <tr></tr>
+</tr> 
+</table>
+          <p>Full Name: $fullName</p> 
+          <p>E-mail   : $email</p>
+	      <p>Phone: $phoneNum</p>
+	      <p>ID : $idNum</p>
+	      <p></p>Purchase  : R1200.00</p>
+        </div>
+   </div>
+   <a href="accomodation.html" class="btn">Back Home</a>
+   </div>
+   
+</body>
+</html>
+_END;
+?>

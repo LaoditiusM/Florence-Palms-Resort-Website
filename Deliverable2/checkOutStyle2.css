@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.circle {
+  background: linear-gradient(360deg, transparent 20%, #cc8c18);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  transition: 0.9s;
+  border-radius: 50px;
+  top: 130px;
+  right: 0px;
+}
+
+body {
+  background: url("rooms4.jpeg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.content .logo {
+  width: 100px;
+  border: none;
+}
+
+.product_info .logo {
+  position: relative;
+  top: 10vh;
+}
+.product_info img {
+  border-right: 4px solid #cc8c18;
+}
+
+.wrapper {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 350px;
+}
+
+.checkout_wrapper {
+  width: 700px;
+  height: 800px;
+  display: flex;
+}
+
+.checkout_wrapper .product_info {
+  width: 45%;
+  background: #581f40;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: relative;
+}
+
+.checkout_wrapper .product_info .product {
+  width: 330px;
+  margin-top: 30px;
+  margin-left: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.checkout_wrapper .checkout_form {
+  width: 55%;
+  background: #fff;
+  padding: 50px 30px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.checkout_wrapper .product_info .content {
+  text-align: center;
+  margin-top: 25px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.checkout_wrapper .product_info .content h3 {
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 3px;
+}
+
+.checkout_wrapper .product_info .content p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.checkout_form p {
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.checkout_form .details .section {
+  padding-bottom: 10px;
+}
+
+.checkout_form .details .section input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #dddddd;
+}
+
+.checkout_form .details .section input[type="text"]:focus {
+  border: 2px solid #581f40;
+}
+
+.checkout_form .details .section.last_section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout_form .details .section.last_section .item {
+  width: 48%;
+}
+
+.checkout_form .details .btn {
+  background: #581f40;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  margin-top: 5px;
+  color: #fff;
+  letter-spacing: 5px;
+  width: 100%;
+}
+
+.checkout_form .details .btn:hover {
+  background: rgb(102, 38, 74);
+}
+
+  /*----------- Feedback Messages -------*/
+ #errMsg{
+	font-size: 10px;
+	color: red;
+	display: inline;
+}	
+
+.errMsg{
+	color: red;
+	margin: 0;
+	position: relative;
+	top: -14px;
+	height: auto;
+	border-radius: 10px;
+	width: 200px;
+	font-size: 13px;
+}
+
+.errMsg p{
+	padding-left: 13px;
+}
+.errIncompleteMsg{
+	width: 300px;
+	position: absolute;
+	border-radius: 15px;
+	top: 51em;
+	left: 1em;
+	height: auto;
+	margin-top: 10px;
+	background: #fff;
+}
+
+/*--------------- RESPONSIVE TABLET --------*/
+@media only screen and (max-width: 756px) {
+  .wrapper {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 350px;
+  }
+
+  .checkout_wrapper {
+    width: 55vh;
+    height: 790px;
+    display: flex;
+  }
+
+  .checkout_wrapper .product_info .product {
+    width: 230px;
+  }
+}/*--------------- RESPONSIVE TABLET --------*/
+
+
+
+/*--------------- RESPONSIVE SMARTPHONE --------*/
+@media only screen and (max-width: 570px) {
+  .product_info .product {
+    display: none;
+  }
+  .checkout_wrapper {
+    width: 600px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkout_wrapper .product_info {
+    width: 330px;
+    background: #581f40;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 17%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+  }
+
+  .checkout_wrapper .checkout_form {
+    width: 55%;
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 20px;
+  }
+
+  .product_info .logo {
+    position: relative;
+    top: 0.6vh;
+  }
+  
+  /*----------- Feedback Messages -------*/
+.errMsg{
+	color: red;
+	margin: 0;
+	position: relative;
+	border-radius: 10px;
+	width: 200px;
+}
+
+.errMsg p{
+	padding-left: 13px;
+}
+.errIncompleteMsg{
+	width: 300px;
+	position: absolute;
+	border-radius: 15px;
+	top: 51em;
+	left: 1em;
+	height: auto;
+	margin-top: 10px;
+	background: #fff;
+}
+}

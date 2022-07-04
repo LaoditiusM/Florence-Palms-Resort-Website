@@ -1,0 +1,55 @@
+<?php
+require_once "config.php";
+require_once "accomodation.php";
+
+$unit = $dayIn = $monthIn = $yearIn = $dateIn = "";
+$dayOut = $dateOut = "";
+$dateTime = new DateTime();
+$btnProceed ="";
+$msg = "";
+
+if(isset($_POST['check']))
+{
+	if(!empty($_POST['unit']))
+		$unit = $_POST['unit'];
+	if(!empty($_POST['days']))
+		$dayIn = $_POST['days'];
+	if(!empty($_POST['months']))
+		$monthIn = $_POST['months'];
+	if(!empty($_POST['years']))
+		$yearIn = $_POST['years'];
+	
+	$dateIn = $yearIn."-".$monthIn."-".$dayIn;
+	$dayOut = $dayIn + 1;
+	$dateOut = $yearIn."-".$monthIn."-".$dayOut;
+	
+	$query = "Select * FROM reservations where checkIn = '$dateIn' AND unitNumber='$unit'";
+	$result = $conn->query($query);
+    if(!$result)die ("Database Access failed:".$conn->error);
+	
+	$rows = $result->num_rows;
+	
+	if($rows > 0)
+	{
+		$msg = "Unit $unit Is Not Available";
+	}
+    else{
+      $msg = "Unit $unit Is Available";
+	  $btnProceed='style="display:block;"';
+    }
+}
+
+if(isset($_POST['book'])){
+	header("location:checkout.php");
+	exit();
+}
+
+if(isset($_POST['close'])){
+	header("location:accomodation.php");
+	exit();
+}
+
+if(isset($_POST['close'])){
+	$msg="";
+}
+?>

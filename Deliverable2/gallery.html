@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence palms Resort</title>
+    <link rel="stylesheet" href="homeStyle.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <div class="sticky_logo logo">
+                    <a href="home2.html#home"><img class="logo1" src="logos-01.png" /></a>
+                    <h3 class='logo-heading'><a href="#"><span>FLORENCE PALMS</span><br>RESORT</a></h3>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="home2.html#home">Home</a></li>
+                    <li><a href="home2.html#about">About</a></li>
+                    <li><a href="accomodation.php">Accomodation</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contactUs.php">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+        </div>
+    </header>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobliemmenu);
+
+        function mobliemmenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+    <section class="Gallery mtop2" id="gallery">
+    <div class="container">
+        <div class="leftH">
+            <div class="subheading-white pBottom2">
+                <h6>GALLERY</h6>
+                <h5>Our pictures</h5>
+                <h3>Florence Palms Resort Gallery<br>
+                Take a look at some of the experiences we have created</h3>
+            </div>
+            <div class="rightH">
+            </div>
+        </div>
+
+        <div class="main">
+            <img class="image-resize" src="back1.jpeg">        
+            <img class="image-resize" src="back2.jpeg">
+            <img class="image-resize" src="back3.jpeg">
+            <img class="image-resize" src="back4.jpeg">
+            <img class="image-resize" src="back1.jpeg">
+            <img class="image-resize" src="back1.jpeg">
+            <img class="image-resize" src="back6.jpeg">
+            <img class="image-resize" src="back1.jpeg">
+            <img class="image-resize" src="back6.jpeg">
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer-content top">
+        <img class="logo1" src="Logos-02.png">
+        <h3 class="flhead posTop">Florence Palms</h3>
+        <p class="posTop">Mamaneng, Marble Hall 0450,Limpopo<br>South Africa</p>
+        <h4>Accomodation Reservations</h4>
+        <h3>0718837258</h3>
+        <ul class="socials">
+            <li><a href="https://m.facebook.com/FlorencePalmsResort/"><img src="fc2.png"></a></li>
+            <li><a href=""><img src="tw2.png"></a></li>
+            <li><a href=""><img src="in2.png"></a></li>
+            <li><a href=""><img src="yt2.png"></a></li>
+        </ul>
+        <hr>
+        <div class="quickLinks">
+            <h4>QUICK LINKS</h4>
+            <p><a href="home2.html#about">About</a></p>
+            <p><a href="accomodation.php">Accomodation</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+            <p<a href="contactUs.php">Contact</a></p>
+        </div>
+        <hr class="mBottom">
+    </div>
+
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 Florence Palms Resort</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
+</body>

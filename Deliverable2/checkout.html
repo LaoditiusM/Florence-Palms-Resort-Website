@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment checkout form UI</title>
+    <link rel="stylesheet" href="checkoutStyle.css">
+    <script src="accomodation.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="checkout_wrapper">           
+            <div class="product_info">
+                <img class="product" src="rooms2.jpeg" alt="product">
+                <div class="content">
+                    <h3>Family unit 1</h3>
+                    <p>R1200.00</p>
+                    <img class="logo" src="logos-01.png">
+                </div>
+            </div>
+            <div class="checkout_form">
+                <div class="circle"></div>
+                <p>Send Receipt to:</p>
+                <form>
+                <div class="details">
+                    <div class="section">
+                        <input type="text" placeholder="Full name">
+                    </div>
+                    <div class="section">
+                        <input type="text" placeholder="E-mail">
+                    </div>
+                    <div class="section">
+                            <input type="text" placeholder="phone Number">
+                    </div>
+                    <div class="section">
+                        <input type="text" placeholder="ID">
+                    </div>          
+                <p>Payment Section</p>
+                    <div class="section">
+                        <input type="text" placeholder="Card Number">
+                    </div>
+                    <div class="section">
+                        <input type="text" placeholder="Cardholder Name">
+                    </div>
+                    <div class="section last_section">
+                        <div class="item">
+                            <input type="text" placeholder="Expiry Date">
+                        </div>
+                        <div class="item">
+                            <input type="text" placeholder="CVV">
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Pay" name="btnPay" class="btn">
+                    <input type="button" value="Cancel" onclick="openAccomodation()" name="btnClose" class="btn">
+                </div>
+                </form>
+             </div>
+         </div>
+    </div>
+
+
+</body>
+
+</html>

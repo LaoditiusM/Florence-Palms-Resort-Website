@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence palms Resort</title>
+    <link rel="stylesheet" href="homeStyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <div class="sticky_logo logo">
+                    <a href="home2.html#home"><img class="logo1" src="logos-01.png" /></a>
+                    <h3 class='logo-heading'><a href="#"><span>FLORENCE PALMS</span><br>RESORT</a></h3>
+                </div>               
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="accomodation.php">Accomodation</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contactUs.php">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+          </div>
+        </div>
+    </header>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", menuToggle);
+
+        function menuToggle() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="mainHeading">
+              <h1><span>Florence Palms</span>, Resort</h1>
+              <p>Mamaneng, Limpopo</p>
+              <a href="accomodation.php"><input type="submit" value="BOOK NOW" class="btn" id="bookNo-home"></a>
+            </div>
+        </div>      
+    </section>
+    <section class="about" id="about">
+        <div class="container pBottom">
+            <div class="heading">
+                <h6>WELCOME</h6>
+                <h5>Welcome to Florence Palms Resort</h5>
+                <h2 class="top2">A resort situated in the heart of a village</h2>
+            </div>
+            
+            <div class="content flex top">
+                <div class="left">
+                    <h3>As much as comfort want to get from us everything</h3>
+                    <p class="paragraph-white">
+                    Situated on a natural spring of virgin land, transformed to a unique spectacle, a fusion of 1000
+                    Palm tress and an unparalleled breathtaking sunset view, in a Village bordering Limpopo and Mpumalanga.
+                    Florence Palms offers a unique blend of cultural history and contemporary 4star service.
+                    </p>
+                    <p class="paragraph-white">
+                        The Found of the Farm, Florence Ntombi Futhi (1949-1994) bought the Farm in 1981. She was a very hard-working
+                        and entrepreneural woman. The natural Springs used to be a source of water for the surrouding Villages and the 
+                        Farm. It was bought and commercialised which created jobs for many of the local community.
+                    </p>
+                </div>
+                <div class="right">
+                    <img class="image-resize" src="images (7).jpeg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="activities pBottom2">
+        <div class="container">
+            <div class="heading-content">
+                <div class="left">                 
+                </div>
+                <div class="right">
+                    <div class="subheading-black">
+                        <h6>ACTIVITY</h6>
+                        <h5>What can i do for Fun?</h5>
+                    </div>
+                </div>
+            </div>         
+    
+            <div class="content top">
+                <div class="left">
+                  <img class="image-resize" src="swim2.jpg" alt="" />
+                </div>
+                   <div class="right">               
+                      <p class="paragraph-black">
+                        Are you a huge fan of fun? Well, rest assured my friend because
+                        we have you covered. There are plenty of activities to enjoy. 
+                        We provide you with the best entertatainment to ensure that
+                        your visit to Florence Palms Resort is unforgetable. We are here to serve you and
+                        your family with great experiences and great service.
+
+                      </p>
+                      <p class="paragraph-black">
+                       1. Swimming <br>2. Beach Volleyball<br>
+                       3. Water Soccer<br>4. Music
+                      </p>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section class="accomodation wrapper2 pBottom" id="accomodation">
+        <div class="container">
+            <div class="heading-content">
+                <div class="left">
+                    <div class="subheading-white">
+                        <h6>SLEEP</h6>
+                        <h5>Our rooms</h5>
+                </div>
+                <div class="right">                 
+                    </div>
+                </div>
+            </div>
+    
+            <div class="content flex mtop">
+                <div class="left grid2">
+                    <div class="box">
+                        <i class="fas fa-desktop"></i>
+                        <p>Free Cost</p>
+                        <h3>No booking fee</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>Service</p>
+                        <h3>Best rate guarantee</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fab fa-resolving"></i>
+                        <p>Availability</p>
+                        <h3>Reservations 24/7</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fal fa-alarm-clock"></i>
+                        <p>Connect</p>
+                        <h3>High-speed Wi-Fi</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-mug-hot"></i>
+                        <p>Entertainment</p>
+                        <h3>DSTV</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-user-tie"></i>
+                        <p>Free Cost</p>
+                        <h3>Room Cleaning</h3>
+                    </div>
+                </div>
+                <div class="right">
+                <img class="image-resize" src="rooms1.jpeg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="Lapas">
+    <div class="container pBottom">
+        <div class="heading-content">
+            <div class="left">
+            </div>
+            <div class="right">
+                <div class="subheading-black">
+                    <h6>RELAX</h6>
+                    <h5>Our Lapas</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="content top">
+            <div class="left">
+                <img class="image-resize" src="lapa3.jpeg" alt="" />
+            </div>
+            <div class="right">
+                <p class="paragraph-black">
+                    We provide the destination and you provide your presence. We have
+                    a wide range of Lapas that you may use to set up birthdays, anniversaries
+                    , Graduations, family reunions or just to RELAX. Your relaxation is on us.
+                    We strive to provide you 
+                    with facilities to make your dayout an unforgetable experiences.
+
+                </p>
+                <p class="paragraph-black">
+                    1. 1 Main large Lapa <br>2. 5 Medium Lapas<br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="accomodation wrapper2 pBottom" id="event">
+    <div class="container">
+        <div class="heading-content">
+            <div class="left">
+                <div class="subheading-white">
+                    <h6>EVENT</h6>
+                    <h5>Mega SA Festive</h5>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+        </div>
+
+        <div class="content flex mtop">
+            <div class="left grid2">
+                <div class="box">
+                    <i class="fas fa-desktop"></i>
+                    <p>General - CompuTicket</p>
+                    <h3>R250.00</h3>
+                </div>
+                <div class="box">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>General - <br>At the Gate</p>
+                    <h3>R280.00</h3>
+                </div>
+                <div class="box">
+                    <i class="fab fa-resolving"></i>
+                    <p>Golden Circle</p>
+                    <h3>R320.00</h3>
+                </div>
+                <div class="box">
+                    <i class="fal fa-alarm-clock"></i>
+                    <p>VIP</p>
+                    <h3>R550.00</h3>
+                </div>
+                <div class="box">
+                    <i class="fas fa-mug-hot"></i>
+                    <p>Cooler Box - Yes</p>
+                    <h3>R50</h3>
+                </div>
+                <div class="box">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Cooler Box - No</p>
+                    <h3>Free Cost</h3>
+                </div>
+            </div>
+            <div class="right">
+                <img class="image-resize" src="festival.jpeg" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map top2 pBottom">
+    <iframe
+        src="https://maps.google.com/maps?q=Florence%20Palms%20Resort,%20Mamaneng%20Marble%20hall,%200450&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+</section>
+<footer>
+    <div class="footer-content top">
+        <img class="logo1" src="Logos-02.png">
+        <h3 class="flhead posTop">Florence Palms</h3>
+        <p class="posTop">Mamaneng, Marble Hall 0450,Limpopo<br>South Africa</p>
+        <h4>Accomodation Reservations</h4>
+        <h3>0718837258</h3>
+        <ul class="socials">
+            <li><a href="https://m.facebook.com/FlorencePalmsResort/"><img src="fc.png"></a></li>
+            <li><a href=""><img src="tw.png"></a></li>
+            <li><a href=""><img src="in.png"></a></li>
+            <li><a href=""><img src="yt.png"></a></li>
+        </ul>
+        <hr>
+        <div class="quickLinks">
+            <h4>QUICK LINKS</h4>
+            <p><a href="home2.html#about">About</a></p>
+            <p><a href="accomodation.php">Accomodation</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+            <p<a href="contactUs.php">Contact</a></p>
+        </div>
+            <hr class="mBottom">
+    </div>
+
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 Florence Palms Resort</p>
+    </div>
+</footer>
+    
+</body>
+</html>

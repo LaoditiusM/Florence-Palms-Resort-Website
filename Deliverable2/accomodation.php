@@ -1,0 +1,279 @@
+<?php
+session_start();
+require_once "config.php";
+
+$dateTime = new DateTime();
+$unit = $dayIn = $monthIn = $yearIn = $dateIn = $dateInTest = "";
+$dayOut = $dateOut = "";
+$dateTime = new DateTime();
+$btnProceed ="";
+$currentDate = "";
+$msg = "";
+
+if(isset($_POST['check']))
+{
+	if(isset($_POST['unit']))
+		$unit = $_POST['unit'];
+	if(isset($_POST['days']))
+		$dayIn = $_POST['days'];
+	if(isset($_POST['months']))
+		$monthIn = $_POST['months'];
+	if(isset($_POST['years']))
+		$yearIn = $_POST['years'];
+	
+	$dateIn = $yearIn."-".$monthIn."-".$dayIn;
+	$dateOut = date("Y-m-d",strtotime("$dateIn +1 day"));
+	
+	$dateInTest = date("Y-m-d",strtotime("$dateIn"));
+	$currentDate = date("Y-m-d");
+	
+	if($dateInTest < $currentDate)
+	{
+		$msg = "Invalid date Selection";
+	}else{
+	$_SESSION['dateIn'] = $dateIn;
+	$_SESSION['dateOut'] = $dateOut;
+	$_SESSION['unit'] = $unit;
+	$query = "Select * FROM reservations where checkIn = '$dateIn' AND unitNumber='$unit'";
+	$result = $conn->query($query);
+    if(!$result)die ("Database Access failed:".$conn->error);
+	
+	$rows = $result->num_rows;
+	
+	if($unit < 1)
+	{
+		$msg = "Unit number is required";
+	}else if($rows > 0)
+	{
+		$msg = "Unit $unit Is Not Available on $dayIn/$monthIn/$yearIn";
+	}
+    else{
+      $msg = "Unit $unit Is Available on $dayIn/$monthIn/$yearIn";
+	  $btnProceed='style="display:block;"';
+    }
+	}
+}
+
+if(isset($_POST['book'])){
+	
+	header("location:checkout.php");
+	exit();
+}
+
+if(isset($_POST['close'])){
+	header("location:accomodation.php");
+	exit();
+}
+
+if(isset($_POST['close'])){
+	$msg="";
+}
+	
+
+echo <<<_END
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence palms Resort</title>
+    <link rel="stylesheet" href="HomeStyle.css">
+    <script src="accomodation.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <div class="sticky_logo logo">
+                    <a href="home2.html#home"><img class="logo1" src="logos-01.png" /></a>
+                    <h3 class='logo-heading'><a href="home2.html#home"><span>FLORENCE PALMS</span><br>RESORT</a></h3>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="home2.html#home">Home</a></li>
+                    <li><a href="home2.html#about">About</a></li>
+                    <li><a href="accomodation.php">Accomodation</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contactUs.php">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+        </div>
+    </header>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", menuToggle);
+
+        function menuToggle() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+
+<section class="offer mtop2" id="offers">
+    <div class="container">
+        <div class="leftH">
+            <div class="subheading-white pBottom2">
+                <h6>LUXURY</h6>
+                <h5>Our rooms</h5>
+                <h3>We offer 12 Family Units - Self catering<br>Our Superior Rooms are ample in size (40 square meters).</h3>
+            </div>
+            <div class="rightH">
+            </div>
+        </div>
+
+        <div class="content mtop">
+            <div class="box flex">
+                <div class="left">
+                    <img src="rooms2.jpeg" alt="" />
+                </div>
+                <div class="right">
+                    <h4>Family Unit</h4>
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        They have all modern conveniences and luxurious amedities.
+                        <br>4 Beds
+                        <br> Interior Toilet
+                        <br> kitchen
+                        <br>DSTV
+                    </p>
+                    <h5>From R1200.00/night</h5>
+                    <button class="flex1" onclick="openForm()">
+                        <span>Check Availability</span>
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="form-popup" id="myForm">
+    <form class="form-container" method="post">
+        <h1 class="pBottom">Check Availability</h1>
+		<label for="units"><b>Unit Number</b></label>
+        <select class="dropDown" value="$unit" id="units" name="unit">
+		    <option value="0">Select Unit Number</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+		</select>
+        <label for="day"><b>Day</b></label>
+        <select class="dropDown" value="$dayIn" id="days" name="days">
+		    <option value="0">Select Day</option>
+            <option value="01">1</option>
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+            <option value="05">5</option>
+            <option value="06">6</option>
+            <option value="07">7</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+        </select>
+        <label for="month"><b>Month</b></label>
+        <select class="dropDown" value="$monthIn" id="months" name="months">
+		    <option value="0">Select Month</option>
+            <option value="01">January</option><option value="02">February</option><option value="03">March</option>
+            <option value="04">April</option><option value="05">May</option><option value="06">June</option>
+            <option value="07">July</option><option value="08">August</option><option value="09">September</option>
+            <option value="10">October</option><option value="11">November</option><option value="12">December</option>
+        </select>
+        <label for="year"><b>Year</b></label>
+        <select class="dropDown" value="$yearIn" id="years" name="years">
+		    <option value="0">Select Year</option>
+            <option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option>
+        </select>
+		<p class="unitMsg">$msg</p>
+        <div class="buttons">
+        <button type="submit" class="fbtn" name="check">Check</button>
+        <button type="submit" class="btncancel mtop fbtn" name="close" onclick="closeForm()">Close</button>
+		</div>
+		<button type="submit" $btnProceed class="btnProceed mtop fbtn" name="book">Book</button>
+    </form>
+</div>
+<footer>
+    <div class="footer-content top">
+        <img class="logo1" src="Logos-02.png">
+        <h3 class="flhead posTop">Florence Palms</h3>
+        <p class="posTop">Mamaneng, Marble Hall 0450,Limpopo<br>South Africa</p>
+        <h4>Accomodation Reservations</h4>
+        <h3>0718837258</h3>
+        <ul class="socials">
+            <li><a href=""><img src="fc2.png"></a></li>
+            <li><a href=""><img src="tw2.png"></a></li>
+            <li><a href=""><img src="in2.png"></a></li>
+            <li><a href=""><img src="yt2.png"></a></li>
+        </ul>
+        <hr>
+        <div class="quickLinks">
+            <h4>QUICK LINKS</h4>
+            <p><a href="home2.html#about">About</a></p>
+            <p><a href="accomodation.php">Accomodation</a></p>
+            <p><a href="gallery.html">Gallery</a></p>
+            <p<a href="contactUs.php">Contact</a></p>
+        </div>
+        <hr class="mBottom">
+    </div>
+
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 Florence Palms Resort</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
+			
+</body>
+</html>
+_END;
+?>
